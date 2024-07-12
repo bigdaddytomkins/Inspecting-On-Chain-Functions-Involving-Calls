@@ -38,20 +38,21 @@ function flashLoan(
     // ...
 }
 ```
-# Used Encoding/Decoding or Call Method: abi.encode
+## Used Encoding/Decoding or Call Method: abi.encode
 
 # Explanation
-Purpose:
+## Purpose:
 
 The flashLoan function in the Aave protocol allows users to borrow assets without providing collateral, as long as the borrowed amount plus a fee is returned within the same transaction. This is commonly used for arbitrage, collateral swapping, or other complex financial operations that can be completed in a single transaction.
 
-Detailed Usage:
+## Detailed Usage:
 
 The flashLoan function utilizes the abi.encode method to package multiple parameters into a single bytes array called data. This array is used internally to pass around the function parameters as a single unit.
 
 abi.encode is used here to efficiently bundle all the input parameters into a format that can be easily passed to other internal functions or contracts.
 This method ensures that the data is compact and conforms to the ABI (Application Binary Interface) standard, making it compatible with other smart contract functions and calls.
-Impact:
+
+## Impact:
 
 The use of abi.encode in the flashLoan function is crucial for maintaining the modularity and flexibility of the Aave protocol. By encoding multiple parameters into a single bytes array, the protocol can pass complex data structures between functions and contracts without losing any information. This not only simplifies the function signatures but also enhances the protocol's ability to integrate with other smart contracts and external protocols.
 
